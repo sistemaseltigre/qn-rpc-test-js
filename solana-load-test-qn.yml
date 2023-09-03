@@ -1,0 +1,14 @@
+config:
+  target:  'QUICKNODE_RPC' # Reemplaza con la URL de tu nodo QuickNode
+  phases:
+    - duration: 60
+      arrivalRate: 10 # Change number of requests per second here
+scenarios:
+  - flow:
+      - post:
+          url: "/"
+          json:
+            id: 1
+            jsonrpc: "2.0"
+            method: "getConfirmedBlock"
+            params: [1]
